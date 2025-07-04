@@ -50,7 +50,7 @@ slides.forEach((slide) => {
 
 const btns = document.querySelectorAll(".pgn-btns button");
 
-function renderActiveSLide() {
+function renderActiveSlide() {
   slides.forEach((slide, index) => {
     if (index === activeSlide) {
       slide.classList.add("active");
@@ -67,7 +67,7 @@ function renderActiveSLide() {
     }
   });
 }
-renderActiveSLide();
+renderActiveSlide();
 
 function renderNextSlide() {
   if (activeSlide === slides.length - 1) {
@@ -76,7 +76,7 @@ function renderNextSlide() {
     activeSlide++;
   }
 
-  renderActiveSLide();
+  renderActiveSlide();
 }
 
 let interval = setInterval(() => {
@@ -93,7 +93,7 @@ function resetInterval() {
 btns.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     activeSlide = index;
-    renderActiveSLide();
+    renderActiveSlide();
     resetInterval();
   });
 });
@@ -105,7 +105,7 @@ document.addEventListener("keydown", (event) => {
     } else {
       activeSlide++;
     }
-    renderActiveSLide();
+    renderActiveSlide();
     resetInterval();
   } else if (event.key === "ArrowLeft") {
     if (activeSlide === 0) {
@@ -113,7 +113,7 @@ document.addEventListener("keydown", (event) => {
     } else {
       activeSlide--;
     }
-    renderActiveSLide();
+    renderActiveSlide();
     resetInterval();
   }
 });
